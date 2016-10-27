@@ -101,6 +101,18 @@
     <Compile Include="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Models\Address.cs" />
+    <Compile Include="Models\IVoiceControlModule.cs" />
+    <Compile Include="Models\Location.cs" />
+    <Compile Include="Models\LocationService.cs" />
+    <Compile Include="Models\Weather\WeatherCommands.cs" />
+    <Compile Include="Models\Weather\WeatherCurrent.cs" />
+    <Compile Include="Models\Weather\WeatherDay.cs" />
+    <Compile Include="Models\Weather\WeatherModel.cs" />
+    <Compile Include="Models\Weather\WeatherService.cs" />
+    <Compile Include="Models\Weather\WeatherViewModel.cs" />
+    <Compile Include="Models\Weather\WeatherVoiceController.cs" />
+    <Compile Include="Models\Weather\WeatherWeek.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -110,6 +122,7 @@
     <None Include="WeatherModulePrototype_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Grammar\weatherGrammar.xml" />
     <Content Include="Properties\Default.rd.xml" />
     <Content Include="Assets\LockScreenLogo.scale-200.png" />
     <Content Include="Assets\SplashScreen.scale-200.png" />
@@ -128,6 +141,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="ViewModels\" />
+    <Folder Include="Views\" />
   </ItemGroup>
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
     <VisualStudioVersion>14.0</VisualStudioVersion>

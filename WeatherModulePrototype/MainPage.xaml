@@ -7,7 +7,160 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
 
-    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    <Grid Background="Black">
+        <StackPanel x:Name="Weather" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,0,15,0">
+            <TextBlock x:Name="Heading1" HorizontalAlignment="Center" Height="30" Margin="10,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="400"
+                FontFamily="Century Gothic" FontSize="32" Foreground="Snow" TextAlignment="Center"> Weather Example
+            </TextBlock>
 
+            <TextBlock x:Name="Heading2" HorizontalAlignment="Center" Height="20" Margin="10,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="400"
+                FontFamily="Century Gothic" FontSize="16" Foreground="Snow" TextAlignment="Center"> Current Weather
+            </TextBlock>
+            <StackPanel x:Name="CurrentWeather" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,0,15,0">
+                <TextBlock x:Name="CurrentWeatherLocationTextBlock" FontSize="60" FontFamily="Century Gothic" Foreground="Snow" TextAlignment="Center" Height="63"/>
+                <TextBlock x:Name="CurrentWeatherDate" FontSize="25" FontFamily="Century Gothic" Foreground="Snow" TextAlignment="Center" Height="28"/>
+                <StackPanel Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center">
+                    <Image x:Name="CurrentWeatherTypeImage" Height="80" Width="80" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                    <TextBlock x:Name="CurrentWeatherTempTextBlock" Margin="0,0,0,0"  FontSize="100" FontFamily="Century Gothic" Foreground="Snow" TextAlignment="Center" Padding="0"></TextBlock>
+                    <StackPanel Orientation="Vertical" Height="105">
+                        <TextBlock FontSize="32" FontFamily="Century Gothic" Foreground="Snow" TextAlignment="Left" Margin="0,0,0,0" Height="65" SelectionChanged="TextBlock_SelectionChanged">°</TextBlock>
+                        <TextBlock x:Name="CurrentWeatherHiTempTextBlock" FontSize="15" FontFamily="Century Gothic" Foreground="Snow" TextAlignment="Center" Margin="0" VerticalAlignment="Top"/>
+                        <TextBlock x:Name="CurrentWeatherLowTempTextBlock" FontSize="15" FontFamily="Century Gothic" Foreground="Snow" TextAlignment="Center" Margin="0"  VerticalAlignment="Top"/>
+                    </StackPanel>
+                </StackPanel>
+            </StackPanel>
+
+
+            <TextBlock x:Name="Heading3" HorizontalAlignment="Center" Height="20" Margin="10,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="400"
+                FontFamily="Century Gothic" FontSize="16" Foreground="Snow" TextAlignment="Center"> Todays Weather
+            </TextBlock>
+            <!-- Todays Weather -->
+            <StackPanel x:Name="TodaysWeather" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,0,15,0" Orientation="Vertical">
+                <TextBlock x:Name="TodaysWeatherLastUpdateDate" FontSize="25" FontFamily="Century Gothic" Foreground="Snow" TextAlignment="Center" Height="28"/>
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                    <StackPanel Orientation="Vertical" HorizontalAlignment="Center"  Margin="5,0,5,0">
+                        <TextBlock x:Name="Time6AMToday" FontSize="20" FontFamily="CenturyGothic" Foreground="Snow" HorizontalAlignment="Center"/>
+                        <TextBlock x:Name="Temp6AMToday" FontSize="40" FontFamily="CenturyGothic" Foreground="Snow" HorizontalAlignment="Center"/>
+                        <Image x:Name="Weather6AMToday" Height="32" Width="32" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Vertical" HorizontalAlignment="Center"  Margin="5,0,5,0">
+                        <TextBlock x:Name="Time9AMToday" FontSize="20" FontFamily="CenturyGothic" Foreground="Snow" HorizontalAlignment="Center"/>
+                        <TextBlock x:Name="Temp9AMToday" FontSize="40" FontFamily="CenturyGothic" Foreground="Snow" HorizontalAlignment="Center"/>
+                        <Image x:Name="Weather9AMToday" Height="32" Width="32" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Vertical" HorizontalAlignment="Center"  Margin="5,0,5,0">
+                        <TextBlock x:Name="Time12PMToday" FontSize="20" FontFamily="CenturyGothic" Foreground="Snow" HorizontalAlignment="Center"/>
+                        <TextBlock x:Name="Temp12PMToday" FontSize="40" FontFamily="CenturyGothic" Foreground="Snow" HorizontalAlignment="Center"/>
+                        <Image x:Name="Weather12PMToday" Height="32" Width="32" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Vertical" HorizontalAlignment="Center"  Margin="5,0,5,0">
+                        <TextBlock x:Name="Time3PMToday" FontSize="20" FontFamily="CenturyGothic" Foreground="Snow" HorizontalAlignment="Center"/>
+                        <TextBlock x:Name="Temp3PMToday" FontSize="40" FontFamily="CenturyGothic" Foreground="Snow" HorizontalAlignment="Center"/>
+                        <Image x:Name="Weather3PMToday" Height="32" Width="32" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Vertical" HorizontalAlignment="Center"  Margin="5,0,5,0">
+                        <TextBlock x:Name="Time6PMToday" FontSize="20" FontFamily="CenturyGothic" Foreground="Snow" HorizontalAlignment="Center"/>
+                        <TextBlock x:Name="Temp6PMToday" FontSize="40" FontFamily="CenturyGothic" Foreground="Snow" HorizontalAlignment="Center"/>
+                        <Image x:Name="Weather6PMToday" Height="32" Width="32" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Vertical" HorizontalAlignment="Center"  Margin="5,0,5,0">
+                        <TextBlock x:Name="Time9PMToday" FontSize="20" FontFamily="CenturyGothic" Foreground="Snow" HorizontalAlignment="Center"/>
+                        <TextBlock x:Name="Temp9PMToday" FontSize="40" FontFamily="CenturyGothic" Foreground="Snow" HorizontalAlignment="Center"/>
+                        <Image x:Name="Weather9PMToday" Height="32" Width="32" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                    </StackPanel>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                    <TextBlock x:Name="TodaysHighTextBlock" FontSize="20" FontFamily="CenturyGothic" Foreground="Snow" HorizontalAlignment="Center" Margin="10,0,10,0"/>
+                    <TextBlock x:Name="TodaysLowTextBlock" FontSize="20" FontFamily="CenturyGothic" Foreground="Snow" HorizontalAlignment="Center" Margin="10,0,10,0"/>
+                </StackPanel>
+                <TextBlock x:Name="TodaysWeatherLocationTextBlock" FontSize="60" FontFamily="Century Gothic" Foreground="Snow" TextAlignment="Center" Height="63" RenderTransformOrigin="0.262,6.053"/>
+            </StackPanel>
+
+
+
+            <TextBlock x:Name="Heading4" HorizontalAlignment="Center" Height="20" Margin="10,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="400"
+                FontFamily="Century Gothic" FontSize="16" Foreground="Snow" TextAlignment="Center"> Tomorrows Weather
+            </TextBlock>
+            <!-- Tomorrows Weather -->
+            <StackPanel x:Name="TomorrowsWeather" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,0,15,0" Orientation="Vertical">
+                <TextBlock x:Name="TomorrowsWeatherLastUpdateDate" FontSize="25" FontFamily="Century Gothic" Foreground="Snow" TextAlignment="Center" Height="28"/>
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                    <StackPanel Orientation="Vertical" HorizontalAlignment="Center"  Margin="5,0,5,0">
+                        <TextBlock x:Name="Time6AMTomorrow" FontSize="20" FontFamily="CenturyGothic" Foreground="Snow" HorizontalAlignment="Center"/>
+                        <TextBlock x:Name="Temp6AMTomorrow" FontSize="40" FontFamily="CenturyGothic" Foreground="Snow" HorizontalAlignment="Center"/>
+                        <Image x:Name="Weather6AMTomorrow" Height="32" Width="32" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Vertical" HorizontalAlignment="Center"  Margin="5,0,5,0">
+                        <TextBlock x:Name="Time9AMTomorrow" FontSize="20" FontFamily="CenturyGothic" Foreground="Snow" HorizontalAlignment="Center"/>
+                        <TextBlock x:Name="Temp9AMTomorrow" FontSize="40" FontFamily="CenturyGothic" Foreground="Snow" HorizontalAlignment="Center"/>
+                        <Image x:Name="Weather9AMTomorrow" Height="32" Width="32" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Vertical" HorizontalAlignment="Center"  Margin="5,0,5,0">
+                        <TextBlock x:Name="Time12PMTomorrow" FontSize="20" FontFamily="CenturyGothic" Foreground="Snow" HorizontalAlignment="Center"/>
+                        <TextBlock x:Name="Temp12PMTomorrow" FontSize="40" FontFamily="CenturyGothic" Foreground="Snow" HorizontalAlignment="Center"/>
+                        <Image x:Name="Weather12PMTomorrow" Height="32" Width="32" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Vertical" HorizontalAlignment="Center"  Margin="5,0,5,0">
+                        <TextBlock x:Name="Time3PMTomorrow" FontSize="20" FontFamily="CenturyGothic" Foreground="Snow" HorizontalAlignment="Center"/>
+                        <TextBlock x:Name="Temp3PMTomorrow" FontSize="40" FontFamily="CenturyGothic" Foreground="Snow" HorizontalAlignment="Center"/>
+                        <Image x:Name="Weather3PMTomorrow" Height="32" Width="32" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Vertical" HorizontalAlignment="Center"  Margin="5,0,5,0">
+                        <TextBlock x:Name="Time6PMTomorrow" FontSize="20" FontFamily="CenturyGothic" Foreground="Snow" HorizontalAlignment="Center"/>
+                        <TextBlock x:Name="Temp6PMTomorrow" FontSize="40" FontFamily="CenturyGothic" Foreground="Snow" HorizontalAlignment="Center"/>
+                        <Image x:Name="Weather6PMTomorrow" Height="32" Width="32" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Vertical" HorizontalAlignment="Center"  Margin="5,0,5,0">
+                        <TextBlock x:Name="Time9PMTomorrow" FontSize="20" FontFamily="CenturyGothic" Foreground="Snow" HorizontalAlignment="Center"/>
+                        <TextBlock x:Name="Temp9PMTomorrow" FontSize="40" FontFamily="CenturyGothic" Foreground="Snow" HorizontalAlignment="Center"/>
+                        <Image x:Name="Weather9PMTomorrow" Height="32" Width="32" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                    </StackPanel>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                    <TextBlock x:Name="TomorrowsHighTextBlock" FontSize="20" FontFamily="CenturyGothic" Foreground="Snow" HorizontalAlignment="Center" Margin="10,0,10,0"/>
+                    <TextBlock x:Name="TomorrowsLowTextBlock" FontSize="20" FontFamily="CenturyGothic" Foreground="Snow" HorizontalAlignment="Center" Margin="10,0,10,0"/>
+                </StackPanel>
+                <TextBlock x:Name="TomorrowsWeatherLocationTextBlock" FontSize="60" FontFamily="Century Gothic" Foreground="Snow" TextAlignment="Center" Height="63" RenderTransformOrigin="0.262,6.053"/>
+            </StackPanel>
+
+            <TextBlock x:Name="Heading5" HorizontalAlignment="Center" Height="20" Margin="10,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="400"
+                FontFamily="Century Gothic" FontSize="16" Foreground="Snow" TextAlignment="Center"> Weeks Weather
+            </TextBlock>
+            <StackPanel x:Name="WeeksWeatherForecast" HorizontalAlignment="Center" VerticalAlignment="Bottom" Orientation="Vertical">
+                <TextBlock x:Name="WeeksWeatherLocationTextBlock" FontSize="60" FontFamily="Century Gothic" Foreground="Snow" TextAlignment="Center" Height="63"/>
+                <StackPanel HorizontalAlignment="Center" VerticalAlignment="Bottom" Orientation="Horizontal">
+                    <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Orientation="Vertical" Margin="10,0,10,0">
+                        <TextBlock x:Name="ForecastDay1Date" FontSize="25" FontFamily="CenturyGothic" Foreground="Snow" HorizontalAlignment="Center"/>
+                        <Image x:Name="ForecastDay1Weather" Height="32" Width="32" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                        <TextBlock x:Name="ForecastDay1High" FontSize="25" FontFamily="CenturyGothic" Foreground="Snow" HorizontalAlignment="Center"/>
+                        <TextBlock x:Name="ForecastDay1Low" FontSize="25" FontFamily="CenturyGothic" Foreground="Snow" HorizontalAlignment="Center"/>
+                    </StackPanel>
+                    <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Orientation="Vertical" Margin="10,0,10,0">
+                        <TextBlock x:Name="ForecastDay2Date" FontSize="25" FontFamily="CenturyGothic" Foreground="Snow" HorizontalAlignment="Center"/>
+                        <Image x:Name="ForecastDay2Weather" Height="32" Width="32" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                        <TextBlock x:Name="ForecastDay2High" FontSize="25" FontFamily="CenturyGothic" Foreground="Snow" HorizontalAlignment="Center"/>
+                        <TextBlock x:Name="ForecastDay2Low" FontSize="25" FontFamily="CenturyGothic" Foreground="Snow" HorizontalAlignment="Center"/>
+                    </StackPanel>
+                    <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Orientation="Vertical" Margin="10,0,10,0">
+                        <TextBlock x:Name="ForecastDay3Date" FontSize="25" FontFamily="CenturyGothic" Foreground="Snow" HorizontalAlignment="Center"/>
+                        <Image x:Name="ForecastDay3Weather" Height="32" Width="32" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                        <TextBlock x:Name="ForecastDay3High" FontSize="25" FontFamily="CenturyGothic" Foreground="Snow" HorizontalAlignment="Center"/>
+                        <TextBlock x:Name="ForecastDay3Low" FontSize="25" FontFamily="CenturyGothic" Foreground="Snow" HorizontalAlignment="Center"/>
+                    </StackPanel>
+                    <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Orientation="Vertical" Margin="10,0,10,0">
+                        <TextBlock x:Name="ForecastDay4Date" FontSize="25" FontFamily="CenturyGothic" Foreground="Snow" HorizontalAlignment="Center"/>
+                        <Image x:Name="ForecastDay4Weather" Height="32" Width="32" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                        <TextBlock x:Name="ForecastDay4High" FontSize="25" FontFamily="CenturyGothic" Foreground="Snow" HorizontalAlignment="Center"/>
+                        <TextBlock x:Name="ForecastDay4Low" FontSize="25" FontFamily="CenturyGothic" Foreground="Snow" HorizontalAlignment="Center"/>
+                    </StackPanel>
+                    <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Orientation="Vertical" Margin="10,0,10,0">
+                        <TextBlock x:Name="ForecastDay5Date" FontSize="25" FontFamily="CenturyGothic" Foreground="Snow" HorizontalAlignment="Center"/>
+                        <Image x:Name="ForecastDay5Weather" Height="32" Width="32" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                        <TextBlock x:Name="ForecastDay5High" FontSize="25" FontFamily="CenturyGothic" Foreground="Snow" HorizontalAlignment="Center"/>
+                        <TextBlock x:Name="ForecastDay5Low" FontSize="25" FontFamily="CenturyGothic" Foreground="Snow" HorizontalAlignment="Center"/>
+                    </StackPanel>
+                </StackPanel>
+            </StackPanel>
+        </StackPanel>
     </Grid>
 </Page>
